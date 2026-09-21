@@ -12,9 +12,8 @@ namespace HotelLasTerrazas.Web.DataAccess
 {
     public class UsuarioDAO
     {
-        /// <summary>
+
         /// Valida credenciales. Devuelve el Usuario si son correctas, o null si no.
-        /// </summary>
         public Usuario ValidarCredenciales(string nombreUsuario, string password)
         {
             string claveHash = CalcularHash(password);
@@ -47,9 +46,7 @@ namespace HotelLasTerrazas.Web.DataAccess
             return null; // credenciales inválidas
         }
 
-        /// <summary>
         /// Registra un nuevo Usuario + Cliente en una sola transacción ADO.NET.
-        /// </summary>
         public int RegistrarCliente(Cliente cliente)
         {
             using (var conexion = ConexionBD.ObtenerConexion())
@@ -100,9 +97,7 @@ namespace HotelLasTerrazas.Web.DataAccess
             }
         }
 
-        /// <summary>
         /// Obtiene el IdCliente a partir del IdUsuario (útil tras el login).
-        /// </summary>
         public int ObtenerIdClientePorUsuario(int idUsuario)
         {
             using (var conexion = ConexionBD.ObtenerConexion())
@@ -116,10 +111,8 @@ namespace HotelLasTerrazas.Web.DataAccess
             }
         }
 
-        /// <summary>
         /// Hash simple SHA256 para fines académicos.
         /// En un entorno productivo se recomienda usar BCrypt o PBKDF2 con salt.
-        /// </summary>
         public static string CalcularHash(string texto)
         {
             using (var sha256 = SHA256.Create())
