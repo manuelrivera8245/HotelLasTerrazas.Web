@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="DataAccess\HabitacionDAO.cs" />
     <Compile Include="DataAccess\PagoDAO.cs" />
     <Compile Include="DataAccess\ReservaDAO.cs" />
     <Compile Include="DataAccess\UsuarioDAO.cs" />
