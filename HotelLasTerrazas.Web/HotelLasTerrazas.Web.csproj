@@ -119,6 +119,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="DataAccess\PagoDAO.cs" />
+    <Compile Include="DataAccess\ReservaDAO.cs" />
     <Compile Include="DataAccess\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
