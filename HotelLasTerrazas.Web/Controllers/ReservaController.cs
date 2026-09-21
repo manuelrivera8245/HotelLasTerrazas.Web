@@ -8,17 +8,13 @@ using HotelLasTerrazas.Web.Models;
 
 namespace HotelLasTerrazas.Web.Controllers
 {
-    /// <summary>
     /// Controlador usado por el rol Cliente para buscar disponibilidad y reservar.
-    /// </summary>
     public class ReservaController : Controller
     {
         private readonly HabitacionDAO habitacionDAO = new HabitacionDAO();
         private readonly ReservaDAO reservaDAO = new ReservaDAO();
 
-        /// <summary>
         /// Verifica que haya una sesión de Cliente activa antes de cada acción.
-        /// </summary>
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             if (Session["IdCliente"] == null)

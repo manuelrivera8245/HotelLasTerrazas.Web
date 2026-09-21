@@ -10,9 +10,7 @@ namespace HotelLasTerrazas.Web.DataAccess
 {
     public class HabitacionDAO
     {
-        /// <summary>
         /// Llama a sp_BuscarDisponibilidad. idTipoHabitacion puede ser null (todas).
-        /// </summary>
         public List<HabitacionDisponible> BuscarDisponibilidad(DateTime fechaEntrada, DateTime fechaSalida, int? idTipoHabitacion)
         {
             var lista = new List<HabitacionDisponible>();
@@ -44,9 +42,7 @@ namespace HotelLasTerrazas.Web.DataAccess
             return lista;
         }
 
-        /// <summary>
         /// Lista todas las habitaciones (vista vw_Habitaciones) - uso en el panel Admin.
-        /// </summary>
         public List<Habitacion> ListarTodas()
         {
             var lista = new List<Habitacion>();
@@ -74,9 +70,7 @@ namespace HotelLasTerrazas.Web.DataAccess
             return lista;
         }
 
-        /// <summary>
         /// Lista los tipos de habitación (para combos en formularios).
-        /// </summary>
         public List<TipoHabitacion> ListarTipos()
         {
             var lista = new List<TipoHabitacion>();
@@ -102,9 +96,7 @@ namespace HotelLasTerrazas.Web.DataAccess
             return lista;
         }
 
-        /// <summary>
         /// Registra una nueva habitación (INSERT directo, uso administrativo).
-        /// </summary>
         public void Registrar(Habitacion habitacion)
         {
             using (var conexion = ConexionBD.ObtenerConexion())

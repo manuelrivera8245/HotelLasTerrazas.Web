@@ -10,10 +10,8 @@ namespace HotelLasTerrazas.Web.DataAccess
 {
     public class ReservaDAO
     {
-        /// <summary>
         /// Registra una reserva completa llamando a sp_RegistrarReserva.
         /// Devuelve el Id de la reserva generada y el monto total calculado por el SP.
-        /// </summary>
         public (int IdReserva, decimal MontoTotal) Registrar(int idCliente, DateTime fechaEntrada, DateTime fechaSalida, List<int> idsHabitaciones)
         {
             // El SP espera los ids separados por coma: "1,3,5"
@@ -43,9 +41,7 @@ namespace HotelLasTerrazas.Web.DataAccess
             throw new Exception("No se pudo registrar la reserva.");
         }
 
-        /// <summary>
         /// Reservas de un cliente específico (para "Mis reservas").
-        /// </summary>
         public List<ReservaDetalle> ListarPorCliente(int idCliente)
         {
             var lista = new List<ReservaDetalle>();
@@ -70,10 +66,8 @@ namespace HotelLasTerrazas.Web.DataAccess
             return lista;
         }
 
-        /// <summary>
         /// Llama a sp_ReservasPorEstado. nombreEstado puede ser null (todas).
         /// Uso: panel de Recepción.
-        /// </summary>
         public List<ReservaDetalle> ListarPorEstado(string nombreEstado)
         {
             var lista = new List<ReservaDetalle>();
@@ -125,7 +119,7 @@ namespace HotelLasTerrazas.Web.DataAccess
             }
         }
 
-        // ---------- Helpers privados ----------
+        //  Helpers privados 
 
         private void EjecutarSpSimple(string nombreSp, int idReserva)
         {

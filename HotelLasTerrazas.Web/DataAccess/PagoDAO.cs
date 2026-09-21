@@ -10,9 +10,7 @@ namespace HotelLasTerrazas.Web.DataAccess
 {
     public class PagoDAO
     {
-        /// <summary>
         /// Llama a sp_RegistrarPago. Registra el pago y genera el comprobante en una sola operación.
-        /// </summary>
         public int Registrar(Pago pago)
         {
             using (var conexion = ConexionBD.ObtenerConexion())
