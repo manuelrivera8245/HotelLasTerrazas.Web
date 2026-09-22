@@ -134,11 +134,46 @@
     <Compile Include="Models\Habitacion.cs" />
     <Compile Include="Models\Reserva.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\es\System.Web.Helpers.resources.dll" />
+    <Content Include="bin\es\System.Web.Mvc.resources.dll" />
+    <Content Include="bin\es\System.Web.Optimization.resources.dll" />
+    <Content Include="bin\es\System.Web.Razor.resources.dll" />
+    <Content Include="bin\es\System.Web.WebPages.Deployment.resources.dll" />
+    <Content Include="bin\es\System.Web.WebPages.Razor.resources.dll" />
+    <Content Include="bin\es\System.Web.WebPages.resources.dll" />
+    <Content Include="bin\HotelLasTerrazas.Web.dll" />
+    <Content Include="bin\HotelLasTerrazas.Web.pdb" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="obj\Debug\HotelLasTerrazas.Web.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\HotelLasTerrazas.Web.dll" />
+    <Content Include="obj\Debug\HotelLasTerrazas.Web.pdb" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -147,8 +182,15 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\HotelLasTerrazas.Web.dll.config" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\HotelLas.56A2F38F.Up2Date" />
+    <Content Include="obj\Debug\HotelLasTerrazas.Web.csproj.AssemblyReference.cache" />
+    <Content Include="obj\Debug\HotelLasTerrazas.Web.csproj.CoreCompileInputs.cache" />
     <None Include="packages.config" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Reserva\Buscar.cshtml" />
