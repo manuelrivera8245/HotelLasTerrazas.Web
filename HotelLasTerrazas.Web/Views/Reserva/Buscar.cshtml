@@ -1,0 +1,48 @@
+@{
+    ViewBag.Title = "Buscar disponibilidad";
+    var tipos = ViewBag.Tipos as System.Collections.Generic.IEnumerable<HotelLasTerrazas.Web.Models.TipoHabitacion>;
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card p-4">
+            <h3 class="mb-3">Buscar habitación disponible</h3>
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    @Html.ValidationSummary(true, "", new { @class = "mb-0" })
+                </div>
+            }
+
+            @using (Html.BeginForm("Buscar", "Reserva", FormMethod.Post))
+            {
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Fecha de entrada</label>
+                        <input type="date" name="fechaEntrada" class="form-control" required />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Fecha de salida</label>
+                        <input type="date" name="fechaSalida" class="form-control" required />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Tipo de habitación</label>
+                        <select name="idTipoHabitacion" class="form-select">
+                            <option value="">Todos</option>
+                            @if (tipos != null)
+                            {
+                                foreach (var t in tipos)
+                                {
+                                    <option value="@t.IdTipoHabitacion">@t.NombreTipo (cap. @t.Capacidad)</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-success mt-4">Buscar disponibilidad</button>
+            }
+        </div>
+    </div>
+</div>

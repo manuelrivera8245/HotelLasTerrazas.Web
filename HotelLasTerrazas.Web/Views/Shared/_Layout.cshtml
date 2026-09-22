@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Hotel Las Terrazas</title>
+    <link rel="icon" href="~/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body { background-color: #f7f5f2; }
+        .navbar-brand { font-weight: 600; letter-spacing: .5px; }
+        .card { border: none; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+        .app-footer { color: #8a8a8a; font-size: .85rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#2f4538;">
+        <div class="container">
+            <a class="navbar-brand" href="@Url.Action("Login", "Account")">🌿 Hotel Las Terrazas</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    @if (Session["IdUsuario"] != null)
+                    {
+                        <li class="nav-item"><span class="nav-link text-white-50">Hola, @Session["NombreUsuario"]</span></li>
+                        if (Session["Rol"]?.ToString() == "Cliente")
+                        {
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Buscar", "Reserva")">Buscar habitación</a></li>
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("MisReservas", "Reserva")">Mis reservas</a></li>
+                        }
+                        if (Session["Rol"]?.ToString() == "Recepcionista")
+                        {
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Recepcion")">Recepción</a></li>
+                        }
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Logout", "Account")">Cerrar sesión</a></li>
+                    }
+                    else
+                    {
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Login", "Account")">Iniciar sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Registro", "Account")">Crear cuenta</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        @if (TempData["Mensaje"] != null)
+        {
+            <div class="alert alert-success">@TempData["Mensaje"]</div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger">@TempData["Error"]</div>
+        }
+        @RenderBody()
+    </div>
+
+    <footer class="text-center app-footer py-3">
+        &copy; @DateTime.Now.Year Hotel Las Terrazas
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
